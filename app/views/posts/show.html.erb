@@ -1,0 +1,11 @@
+<%= @post.title %><br>
+Points: <%= @post.points %><br>
+<%= link_to @post.link.to_s, @post.link%><br>
+<%= link_to "Home", posts_path %><br>
+<%= form_for @post, :url => post_path do |f| %>
+  <%= f.hidden_field :title, :value => @post.title %>
+  <%= f.hidden_field :link, :value => @post.link  %>
+  <%= f.hidden_field :points, :value => @post.points + 1  %>
+  <%= f.submit "Up-vote" %>
+<% end %>
+<!-- <%= link_to "Up-vote", post_path, method: :patch %> -->
