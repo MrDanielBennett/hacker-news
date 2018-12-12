@@ -9,6 +9,10 @@ Points: <%= @post.points %><br>
     <%= f.submit "Up-vote" %>
   <% end %>
 <%end%>
+<% @post.comments.each do |comment| %>
+<%= comment.user.email %><br>
+<%= comment.content %><br>
+<% end %>
 <%= link_to "New comment", new_post_comment_path(@post) %>
 
 
