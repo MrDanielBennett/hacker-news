@@ -1,0 +1,9 @@
+<%= render "layouts/errors_comment", :object => @comment %>
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <%= f.hidden_field :user_id, :value => @user.id%>
+  <%= f.hidden_field :points, :value => 0 %>
+  <%= f.submit %>
+<% end %>

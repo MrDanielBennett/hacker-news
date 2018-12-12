@@ -1,5 +1,7 @@
 # require 'bcrypt'
 class User < ApplicationRecord
+  has_many :posts
+  has_many :comments
   attr_accessor :password
   validates_confirmation_of :password
   validates :email, :presence => true, :uniqueness => true
